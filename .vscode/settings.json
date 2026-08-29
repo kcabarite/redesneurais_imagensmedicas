@@ -1,0 +1,5 @@
+{
+    "python.terminal.executeInFileDir": true,
+    "python.defaultInterpreterPath": "C:\\Users\\55129\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
+}

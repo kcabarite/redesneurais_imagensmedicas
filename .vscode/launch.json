@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Executar projeto K-Means",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/introKMeans06.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
