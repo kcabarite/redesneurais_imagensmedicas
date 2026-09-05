@@ -1,7 +1,7 @@
 # https://scikit-learn.org/stable/modules/generated/
 # sklearn.cluster.KMeans.html
 
-
+#%% Importa e ajusta DataFrame
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -16,8 +16,6 @@ import skimage.transform
 import scipy.signal
 import scipy
 
-
-#%% Importa e ajusta DataFrame
 
 df = pd.read_csv('Painted_Data01.csv')
 # df = pd.read_csv('Painted_Data02.csv')
@@ -54,7 +52,6 @@ sb.pairplot(df_target, hue="target")
 
 
 #%% np 2 pd.dataframe
-
 X_df_raw = df_raw.to_numpy()
 X_df_target = df_target.to_numpy()
 

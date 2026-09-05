@@ -1,13 +1,12 @@
 # https://scikit-learn.org/stable/modules/generated/
 # sklearn.cluster.KMeans.html
 
-
+#%% Abrir Imagem
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sb
 from sklearn.cluster import KMeans
-
 
 import cv2  # OpenCV
 import skimage
@@ -15,9 +14,6 @@ import skimage.exposure
 import skimage.transform
 import scipy.signal
 import scipy
-
-
-#%% Abrir Imagem
 
 # img = cv2.imread('ImagemFuzzyCluster01.pgm', 0)
 # img = cv2.imread('ImagemFuzzyCluster01B.pgm', 0)
@@ -34,29 +30,22 @@ plt.imshow(img, cmap='gray')  # cmap='jet'
 
 
 #%% Converter para vetor
-
 at_Int = img.flatten()  # atributo intensidade
 
-
 #%% Constrói Matriz de atributos / DataFrame
-
 X_df = np.column_stack((at_Int, at_Int))
-
 df_raw = pd.DataFrame({"x": X_df[:, 0].astype(float), "y": X_df[:, 1].astype(float)})
 #plot1
 sb.pairplot(df_raw)
 
 
 #%% np 2 pd.dataframe
-
 X_df_raw = df_raw.to_numpy()
-
 kmeans = KMeans(n_clusters=4, random_state=0)
 kmeans.fit(X_df_raw)
 kmeans.labels_
 
 df_raw['K-classes'] = kmeans.labels_
-
 sb.pairplot(df_raw, hue='K-classes')
 
 
